@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Royal Tag</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/6b591f2848.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--...............................right_side_sign in-->
+    <div class="right-side">
+        <a id="cancel" onclick="toggle_login_panel()">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+        <p>CUSTOMER LOGIN</p>
+        <hr>
+        <div class="email">
+            <p>Email Address</p>
+            <input type="text" placeholder="Email">
+            <p>password</p>
+            <input type="text" placeholder="password">
+            <div class="Login">
+                <button>LOGIN</button>
+                <p class="forget">Forget Your Password?</p>
+            </div>
+            <div class="create acc">
+                <button>CREATE AN ACCOUNT</button>
+            </div>
+        </div>
+    </div>
+    <div class="max-width">
+        <nav class="nav">
+            <!--   .................................... uppernav-->
+            <div class="upper_nav">
+                <div class="upper_nav_icon">
+                    <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-youtube fa-lg" aria-hidden="true"></i>
+                </div>
+                <div class="upper_nav_info">
+                    <p><i class="fa fa-phone"></i>
+                        <span>03037391962</span>
+                    </p>
+                    <hr>
+                    <a class="register"> Register</a>
+                    <hr>
+                    <a class="sign_in" id="sign_in" onClick="toggle_login_panel()">Sign In</a>
+                </div>
+            </div>
+
+            <!--  ......................  middlenav-->
+            <div class="middle_nav">
+                <div class="logo">
+                    <img src="image/logo.avif" alt="">
+                </div>
+                <div class="middle_nav_info">
+                    <input type="text" placeholder="Search">
+                   <i class="fa-solid fa-magnifying-glass"></i>
+                   <a> <i class="fa-solid fa-cart-plus"></i>
+                        <span id="cart_counter" >0</span></a>
+                </div>
+            </div>
+            <!--   ...................................... lowernav-->
+            <div class="lower_nav">
+                <ul>
+                    <li class="lower_nav_manu">
+                        Sale
+                    </li>
+                    <li class="lower_nav_manu">
+                        Jackets
+                    </li>
+                    <li class="lower_nav_manu">
+                        Hoodies
+                    </li>
+                    <li class="lower_nav_manu">
+                        Sweaters
+                    </li>
+                    <li class="lower_nav_manu">
+                        Polos
+                    </li>
+                    <li class="lower_nav_manu">
+                        Tees
+                    </li>
+                    <li class="lower_nav_manu">
+                        Formal Wear
+                    </li>
+                    <li class="lower_nav_manu">
+                        Casual Wear
+                    </li>
+                    <li class="lower_nav_manu">
+                        Trouser
+                    </li>
+                    <li class="lower_nav_manu">
+                        Active Wear
+                    </li>
+                    <li class="lower_nav_manu">
+                         Teh Wear
+                    </li>
+                    <li class="lower_nav_manu">
+                         Accessories
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- ...................................   container-->
+        <div class="container">
+            <div class="lower_container_top">
+                <a> Home < 2 Piece</a>
+                        <div class="lower_container">
+                            <a>2 piece</a>
+                        </div>
+            </div>
+        </div>
+        <!--   ............................................ banner-->
+        <div class="banner">
+            <div class="item_view">
+                <p>VIEW as</p>
+                <div id="btnContainer">
+                    <button class="btn" onclick="listView()"><i class="fa-solid fa-list"></i> List</button>
+
+                    <button class="btn active" onclick="gridView()"><i class="fa-solid fa-grip-vertical"></i>
+                        Grid</button>
+                </div>
+            </div>
+            <div class="right-banner">
+                <div class="item-per-page">
+                    <p>Items per Page</p>
+                    <select>
+                        <option>12</option>
+                        <option>16</option>
+                        <option>20</option>
+                        <option>24</option>
+                        <option>30</option>
+                        <option>25</option>
+                    </select>
+
+                </div>
+                <div class="sort_by">
+                    <p>SORT BY</p>
+                    <select>
+                        <option>Featured</option>
+                        <option>price,low to high</option>
+                        <option>price,high to low</option>
+                        <option>Alphabetically A-Z</option>
+                        <option>Alphabetically Z-A</option>
+                        <option>Best Selling</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--    ................................................imgsection-->
+
+        <div class="image_section">
+            <div class="item" onclick="cart_products(this)">
+                <img src="image/1.webp">
+                <p>2PCS SLIM FIT Suit</p>
+                <p>Rs.29,500</p>
+            </div>
+            <div class="item" onclick="cart_products(this)">
+                <img src="image/2.webp">
+                <p>RT SLIM FIT IMP Suit</p>
+                <p>Rs.28,500</p>
+            </div>
+            <div class="item" onclick="cart_products(this)">
+                <img src="image/3.jpg">
+                <p>2PCS SLIM FIT IMP Suit</p>
+                <p>Rs.28,500</p>
+            </div>
+            <div class="item" onclick="cart_products(this)">
+                <img src="image/4.jpg">
+                <p>IMP Suit</p>
+                <p>Rs.28,499</p>
+            </div>
+        </div>
+        <div id="new_div"></div>
+    </div>
+    <div id="cart_view_toggle">
+        <h2> Your Order</h2>
+        <button id="remove_btn" onclick="remove_btn()">Remove</button>
+        <button id="check_out"> CHECK OUT</button>
+        <div class="total">
+            <span>0</span>
+<!--        <div id="total_price">-->
+<!--            <h3> Total Price</h3>-->
+        </div>
+    </div>
+       <!--js section-->
+    <script src="main.js"></script>
+</body>
+
+</html>
